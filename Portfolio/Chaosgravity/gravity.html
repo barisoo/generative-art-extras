@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Planets</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="gravity_new.js"  type="text/javascript"></script>
+  <!-- <script src="script2.js" type="text/javascript"></script> -->
+  </head>
+
+
+
+<body>
+
+<div id = "app">
+  <div id = "header">
+    <h1>Gravity Simulation</h1>
+  </div>
+  <canvas id="gc" width="900" height="600" style="border:1px solid #000000; background-color: #000;">  </canvas>
+  <div style="display: block; text-align: center;"><button class="startStop" onclick="Run()">Start</button>  <button class="startStop" onclick="Stop()">Stop</button><br>  </div>
+<div>
+<div class = "innerDiv">
+<div id = "tableDiv" style="position: left;margin-left: 40px;">
+
+  <table>
+    <tr>
+      <td><label for="mass">Mass </label></td>
+      <td> <input type="text" id="mass" name="mass"> <br></td>
+    </tr>
+    <tr>
+      <td><label for="xPos">Position X </label></td>
+      <td> <input type="text" id="xPos" name="xPos"> <br></td>
+    </tr>
+    <tr>
+      <td><label for="yPos">Position Y</label></td>
+      <td> <input type="text" id="yPos" name="yPos"> <br></td>
+    </tr>
+    <tr>
+      <td><label for="xVel">X Velocity</label></td>
+      <td> <input type="text" id="xVel" name="xVel"> <br></td>
+    </tr>
+    <tr>
+      <td><label for="yVel">Y Velocity</label></td>
+      <td> <input type="text" id="yVel" name="yVel"> <br></td>
+    </tr>
+    </table> 
+
+  <button onclick="Add()">Add Object</button>
+  <button onclick="Reset()">Reset</button>
+
+</div>
+</div>
+<!-- <div class = "innerDiv">
+<p>
+  Recommended value ranges: <br>
+  Mass: 100-10000 <br>
+  Position X: 0 -  900 <br>
+  Position Y: 0- 600 <br> 
+</p>
+</div> -->
+<div class = "innerDiv" style="float: right;margin-right: 80px;">
+  <h2>Number of Objects: </h2>
+  <p id = "counter">0</p>
+</div>
+</div>
+
+<!-- <div id = "footer">
+  Created by I.B.Orhan 2020
+</div> -->
+</div>
+
+
+
+</body>
+
+</html>
