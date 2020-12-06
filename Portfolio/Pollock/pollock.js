@@ -13,20 +13,10 @@ const one_in_blotch = 1.5;
 const max_rad = 40;
 var interval = 1/1000;
 var max_speed = 1;
-// const line_color = "red";
-// const line_color = "hsl(0,70%,45%)";
-// const line_color2 = "hsl(0,100%,35%)";
-// const line_color3 = "hsl(0,70%,15%)";
-// hsl(181, 98%, 48%)
-// hsl(233, 98%, 54%)
-// hsl(50, 98%, 54%)
-// hsl(349, 98%, 54%)
-// hsl(207, 98%, 54%)
 
 const line_color = "hsl(300, 100%, 38%)";
 const line_color2 = "hsl(300, 100%, 67%)";
 const line_color3 = "hsl(300, 100%, 88%)";
-//,"hsl(46, 2%, 0%)"
 //const color_pallete = ["hsl(114, 73%, 38%)","hsl(160, 73%, 38%)","hsl(218, 73%, 38%)","hsl(218, 73%, 100%)","hsl(0, 73%, 38%)"]
 // const color_pallete = ["hsl(181, 98%, 48%)","hsl(233, 98%, 54%)","hsl(50, 98%, 54%)","hsl(349, 98%, 54%)","hsl(207, 98%, 54%)"]
 const color_pallete =["hsl(45, 100%, 70%)", "hsl(30, 100%, 58%)","hsl(96, 31%, 38%)", "hsl(46, 100%, 77%)","hsl(18, 99%, 54%)","hsl(46, 2%, 76%)"];
@@ -108,12 +98,9 @@ function blobFill(line_color,alpha){
 
 
 function updateCoords(){
-	// console.log("updating coords...")
 	current_frame++;
 	var deleted = [];
-	//for (var i = space.length - 1; i >= 0; i--) {
 	for (var i = given_planets - 1; i >= 0; i--) {
-		console.log(space[i]);
 		var p = space[i];
 		p.x += p.dx;
 		p.y += p.dy;
@@ -179,11 +166,6 @@ function updateCoords(){
 	}
 	}
 
-function printCoords(){
-	for(var i = space.length-1; i>=0; i--){
-		console.log(space[i].x, space[i].y);
-	}
-	}
 
 
 
@@ -191,7 +173,6 @@ var number_of_objects = (Math.random()*max_rand_planets) + given_planets;
 
 
 for (var i = 0; i < number_of_objects; i++) {
-	console.log(i);
 	var pos_neg_x = 0;
 	var pos_neg_y = 0;
 	var pos_neg_z = 0;
@@ -224,14 +205,12 @@ for (var i = 0; i < number_of_objects; i++) {
 	// var create_dz = Math.random() * pos_neg_z;
 	var create_dz =  0;
 	var chosen_color = color_pallete[Math.floor(Math.random()*color_pallete.length)];
-	console.log(chosen_color);
 	space = createPlanet(create_m, create_x, create_y, create_z, create_dx, create_dy, create_dz,chosen_color);
 
 }
 
 
 function main(){
-	//console.log(space[0].z, space[0].radius);
 	var canvas=document.getElementById("myCanvas");
     var ctx=canvas.getContext("2d");
 	if(run_condition){
