@@ -3,9 +3,8 @@ var run_condition = true;
 var space = [];
 const G = 6.67408 * 10**(-3);
 const z_axis_initial_max = 100;
-const max_rand_planets =50;
-const min_rand_planets =20;
-const given_planets = Math.floor((Math.random() * 6) + 5);
+const max_rand_planets =100;
+const given_planets = Math.floor((Math.random() * 40) + 5);
 const growth_frames = Math.random() * 1000;
 var shrink_frames = Math.random() * 50000;
 var current_frame = 0;
@@ -98,7 +97,7 @@ function blobFill(line_color,alpha){
 }
 
 
-unction updateCoords(){
+function updateCoords(){
 	current_frame++;
 	var deleted = [];
 	for (var i = given_planets - 1; i >= 0; i--) {
@@ -124,9 +123,11 @@ unction updateCoords(){
 		} else {
 			p.radius = (multiplier*p.m**(1/3) *2);
 		}
+
 		if(p.radius>max_rad){
 			p.radius = max_rad;
 		}
+
 		
 		var fg_tot_x = 0;
 		var fg_tot_y = 0;
@@ -149,6 +150,7 @@ unction updateCoords(){
 					p2.radius = max_rad;
 				}
 			}
+
 		var accel_x = fg_tot_x / p.m;
 		var accel_y = fg_tot_y / p.m;
 		var accel_z = fg_tot_z / p.m;
@@ -160,12 +162,14 @@ unction updateCoords(){
 	if (deleted.length > 0) {
 		deleteMasses(deleted);
 		document.getElementById("counter").innerHTML = space.length;
+
 	}
 	}
 
 
 
-var number_of_objects = min_rand_planets + (Math.random()*max_rand_planets) + given_planets;
+
+var number_of_objects = (Math.random()*max_rand_planets) + given_planets;
 
 
 for (var i = 0; i < number_of_objects; i++) {
