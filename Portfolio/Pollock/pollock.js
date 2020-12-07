@@ -98,10 +98,10 @@ function blobFill(line_color,alpha){
 }
 
 
-function updateCoords(){
+unction updateCoords(){
 	current_frame++;
 	var deleted = [];
-	for (var i = space.length - 1; i >= given_planets; i--) {
+	for (var i = given_planets - 1; i >= 0; i--) {
 		var p = space[i];
 		p.x += p.dx;
 		p.y += p.dy;
@@ -124,16 +124,14 @@ function updateCoords(){
 		} else {
 			p.radius = (multiplier*p.m**(1/3) *2);
 		}
-
 		if(p.radius>max_rad){
 			p.radius = max_rad;
 		}
-
 		
 		var fg_tot_x = 0;
 		var fg_tot_y = 0;
 		var fg_tot_z = 0;
-		for (var j = given_planets - 1; j >= 0; j--) {
+		for (var j = space.length - 1; j >= given_planets; j--) {
 			if(i!=j){
 				p2 = space[j];
 				var dist = (((p.x - p2.x)**2) + ((p.y - p2.y)**2) + ((p.z - p2.z)**2))**(0.5);
@@ -151,7 +149,6 @@ function updateCoords(){
 					p2.radius = max_rad;
 				}
 			}
-
 		var accel_x = fg_tot_x / p.m;
 		var accel_y = fg_tot_y / p.m;
 		var accel_z = fg_tot_z / p.m;
@@ -163,10 +160,8 @@ function updateCoords(){
 	if (deleted.length > 0) {
 		deleteMasses(deleted);
 		document.getElementById("counter").innerHTML = space.length;
-
 	}
 	}
-
 
 
 
