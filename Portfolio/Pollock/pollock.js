@@ -3,8 +3,9 @@ var run_condition = true;
 var space = [];
 const G = 6.67408 * 10**(-3);
 const z_axis_initial_max = 100;
-const max_rand_planets =100;
-const given_planets = Math.floor((Math.random() * 40) + 5);
+const max_rand_planets =50;
+const min_rand_planets =20;
+const given_planets = Math.floor((Math.random() * 6) + 5);
 const growth_frames = Math.random() * 1000;
 var shrink_frames = Math.random() * 50000;
 var current_frame = 0;
@@ -169,7 +170,7 @@ function updateCoords(){
 
 
 
-var number_of_objects = (Math.random()*max_rand_planets) + given_planets;
+var number_of_objects = min_rand_planets + (Math.random()*max_rand_planets) + given_planets;
 
 
 for (var i = 0; i < number_of_objects; i++) {
