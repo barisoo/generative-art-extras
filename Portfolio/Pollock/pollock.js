@@ -100,7 +100,7 @@ function blobFill(line_color,alpha){
 function updateCoords(){
 	current_frame++;
 	var deleted = [];
-	for (var i = given_planets - 1; i >= 0; i--) {
+	for (var i = space.length - 1; i >= given_planets; i--) {
 		var p = space[i];
 		p.x += p.dx;
 		p.y += p.dy;
@@ -132,7 +132,7 @@ function updateCoords(){
 		var fg_tot_x = 0;
 		var fg_tot_y = 0;
 		var fg_tot_z = 0;
-		for (var j = space.length - 1; j >= given_planets; j--) {
+		for (var j = given_planets - 1; j >= 0; j--) {
 			if(i!=j){
 				p2 = space[j];
 				var dist = (((p.x - p2.x)**2) + ((p.y - p2.y)**2) + ((p.z - p2.z)**2))**(0.5);
