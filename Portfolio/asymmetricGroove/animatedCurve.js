@@ -229,12 +229,12 @@ function negativeList(original){
 
 function drawWaves(){
 	var x = randomList(100);
-	x = rollingAve(x,2);
+	x = rollingAve(x,5);
 	x = reflect(x);
 	changingAmplitudeWithNoise(x,80);
 	
 	var x = randomList(100);
-	x = rollingAve(x,2);
+	x = rollingAve(x,5);
 	x = reflect(x);
 	x = negativeList(x);
 	changingAmplitudeWithNoise(x,80);
