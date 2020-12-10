@@ -19,7 +19,9 @@ const line_color2 = "hsl(300, 100%, 67%)";
 const line_color3 = "hsl(300, 100%, 88%)";
 //const color_pallete = ["hsl(114, 73%, 38%)","hsl(160, 73%, 38%)","hsl(218, 73%, 38%)","hsl(218, 73%, 100%)","hsl(0, 73%, 38%)"]
 // const color_pallete = ["hsl(181, 98%, 48%)","hsl(233, 98%, 54%)","hsl(50, 98%, 54%)","hsl(349, 98%, 54%)","hsl(207, 98%, 54%)"]
-const color_pallete =["hsl(45, 100%, 70%)", "hsl(30, 100%, 58%)","hsl(96, 31%, 38%)", "hsl(46, 100%, 77%)","hsl(18, 99%, 54%)","hsl(46, 2%, 76%)"];
+//const color_pallete =["hsl(45, 100%, 70%)", "hsl(30, 100%, 58%)","hsl(96, 31%, 38%)", "hsl(46, 100%, 77%)","hsl(18, 99%, 54%)","hsl(46, 2%, 76%)"]; //Main Pallete
+
+const color_pallete = ["hsl(197, 69%, 50%)","hsl(197, 23%, 50%)","hsl(197, 23%, 100%)","hsl(131, 55%, 50%)","hsl(356, 55%, 50%)"];
 
 window.onload = function() {
 	var canvas = document.getElementById("myCanvas");
