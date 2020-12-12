@@ -294,7 +294,7 @@ window.onload = function() {
 
 	functionList = create_function_list();
 	
-	if (Math.random() > 0.5) {
+	if (Math.random() > 0) {
 	functionList2 = create_function_list();
 	} else {
 	functionList2 = [-1]}
