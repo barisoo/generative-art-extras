@@ -1,5 +1,5 @@
 /* ----------  NOTES  ----------  
-	No notes atm
+-Add new colors
 */
 
 
@@ -13,8 +13,6 @@ const alpha = 0.2;
 var interval = 1/1000;
 var canvas = "";
 var ctx = "";
-var scale = 1/1000;
-var coord_scale = 1/10000;
 var tranformation = [];
 const NUMBER_OF_BRUSHES =1000;
 const MAX_FRAMES = 1000;
@@ -28,6 +26,7 @@ const origin_loc = [0.5,0.5];//[.5,.5]; //as ratio of max width and max height, 
 var number_of_function_options = 24;
 var y_dir = 1; //to allow the function to flow down the screen
 var functionList = [];
+var functionList2 = [];
 
 
 // ----------  class and function definitions ----------  
@@ -46,12 +45,17 @@ class brush{
 		this.endAngle = 2*Math.PI;
 	}
 
-	update(transformationList){
+	update(transformationList, transformationList2){
 		this.frame ++;
 		var x_dir = 0;
 		for (var i=0; i<transformationList.length;i++){
 			var new_x_dir = functionTransform(x_dir,transformationList[i],this.x,this.y);
 			x_dir = new_x_dir;
+		}
+		var y_dir = 0;
+		for (var i=0; i<transformationList.length;i++){
+			var new_y_dir = functionTransform(x_dir,transformationList2[i],this.x,this.y);
+			y_dir = new_y_dir;
 		}
 		var vec = [x_dir,y_dir];
 		var length= vecLen(vec);
@@ -156,6 +160,10 @@ function functionTransform(current_function_output, option, x , y){
 
 	var calc = current_function_output;
 	switch(option){
+		case -1:
+		calc = 1;
+		break;
+
 		case 0:
 		calc += y;
 		break;
@@ -266,7 +274,7 @@ function main(){
 	//console.log(items[0]);
 	for (var i = items.length - 1; i >= 0; i--) {
 		var current_brush = items[i];
-		current_brush.update(functionList);
+		current_brush.update(functionList,functionList2);
 		current_brush.draw();
 	}
 }
@@ -283,8 +291,11 @@ window.onload = function() {
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 	functionList = create_function_list();
-	console.log(functionList);
-
+	
+	if (Math.random() > 0) {
+	functionList2 = create_function_list();
+	} else {
+	functionList2 = [-1]}
 	items = populateBrushes(NUMBER_OF_BRUSHES, mass, canvas.width, canvas.height, canvas.height, chosen_colour);
 	console.log(items[0]);
 	drawFirstFrame();
