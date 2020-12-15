@@ -350,8 +350,8 @@ window.onload = function() {
 	}
 	document.getElementById('xmatrix').innerHTML = functionList;
 	document.getElementById('ymatrix').innerHTML = functionList2;
-	document.getElementById('xs').innerHTML = functionList;
-	document.getElementById('ys').innerHTML = functionList2;
+	document.getElementById('xs').innerHTML = xs_toPrint;
+	document.getElementById('ys').innerHTML = ys_toPrint;
 
 
 	drawFirstFrame();
