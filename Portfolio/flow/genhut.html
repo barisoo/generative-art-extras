@@ -317,8 +317,8 @@
 			} else {
 			functionList2 = [-1]}
 
-			document.getElementById('xmatrix').innerHTML = functionList;
-			document.getElementById('ymatrix').innerHTML = functionList2;
+			document.getElementById('xmatrix').innerHTML = functionList + "&" + functionList2;
+//			document.getElementById('ymatrix').innerHTML = functionList2;
 			items = populateBrushes(NUMBER_OF_BRUSHES, mass, canvas.width, canvas.height, canvas.height, chosen_colour);
 			console.log(items[0]);
 			drawFirstFrame();
