@@ -26,8 +26,8 @@ const color_pallete = ["hsl(197, 69%, 50%)","hsl(197, 23%, 50%)","hsl(197, 23%, 
 window.onload = function() {
 	var canvas = document.getElementById("myCanvas");
 	var ctx = canvas.getContext("2d");
-	canvas.height = 2000;
-	canvas.width = 3000;
+	//canvas.height = 2000;
+	//canvas.width = 3000;
 	ctx.fillStyle = background_color;
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 	setInterval(main,interval);
