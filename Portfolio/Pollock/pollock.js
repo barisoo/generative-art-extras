@@ -13,6 +13,8 @@ const one_in_blotch = 1.5;
 const max_rad = 40;
 var interval = 1/1000;
 var max_speed = 1;
+var canvasWidth = 3000; //window.innerWidth;//window.width;
+var canvasHeight = 2000; //window.innerHeight;//window.width;
 
 const line_color = "hsl(300, 100%, 38%)";
 const line_color2 = "hsl(300, 100%, 67%)";
@@ -198,8 +200,8 @@ for (var i = 0; i < number_of_objects; i++) {
 	var create_m = 1000;
 	// var create_m = Math.random() * 1000;
 
-	var create_x = Math.random() * window.innerWidth;//window.width;
-	var create_y = Math.random() * window.innerHeight;;//window.height;
+	var create_x = Math.random() * canvasWidth; 
+	var create_y = Math.random() * canvasHeight; //window.innerHeight;;//window.height;
 	var create_z = Math.random() * z_axis_initial_max;//window.height;
 
 	var create_dx = Math.random()* pos_neg_x * max_speed;
